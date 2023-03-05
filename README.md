@@ -41,3 +41,8 @@ Now that our stepper has quadrant drive, we need our chuck to have quadrant driv
 [Quadrant Drive to 12x1 mm male thread](https://www.printables.com/model/415997-quadrant-drive-to-m12x1-male-thread)
 
 ![Quadrant Drive to 12x1 mm male thread](Media/M12x1%20to%20Quadrant%20Drive.jpg)
+
+# Configuration in xTools Creative Space ("XCS")
+XCS assumes you are using one of the xTool brand rotary attachments, and thus is not really configurable to work with other software, so we will need to trick it a little bit to operate how we want. Below is a picture of the rotary configuration panel in XCS. Normally for the chuck you would enter the true diameter of the workpiece, but we can't do that because our rotary attachment is a bit different. The xTool rotary attachments all have (I believe...) 1.8 degree/step steppers and a 4:1 pulley ratio, so that 4 rotations of the stepper motor shaft result in a single rotation of the chuck. In our current design we are not using any pulleys or gears so our ratio is 1:1. So under "Diameter" in XCS, we need to enter either 4 times the true diameter if we are using a 1.8 degree/step motor, or 2 times the true diameter if we are using a 0.9 deg/step motor.
+
+![Laser rotary attachment settings for chuck in in XCS](Media/XCS_rotary_setup.png)
